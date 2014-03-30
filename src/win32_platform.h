@@ -202,6 +202,7 @@ typedef struct _GLFWlibraryWin32
     ATOM                classAtom;
     DWORD               foregroundLockTimeout;
     char*               clipboardString;
+    char*               keyName;
 
 #ifndef _GLFW_NO_DLOAD_WINMM
     // winmm.dll

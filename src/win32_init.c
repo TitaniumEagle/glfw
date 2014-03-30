@@ -243,6 +243,7 @@ void _glfwPlatformTerminate(void)
                           SPIF_SENDCHANGE);
 
     free(_glfw.win32.clipboardString);
+    free(_glfw.win32.keyName);
 
     _glfwTerminateJoysticks();
     _glfwTerminateContextAPI();

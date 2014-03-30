@@ -1239,6 +1239,21 @@ void _glfwPlatformPostEmptyEvent(void)
     PostMessage(window->win32.handle, WM_NULL, 0, 0);
 }
 
+const char* _glfwPlatformGetKeyName(int key, int scancode)
+{
+    WCHAR name[256];
+
+    if (key != GLFW_KEY_UNKNOWN)
+    {
+    }
+
+    GetKeyNameTextW(scancode << 16, name, sizeof(name) / sizeof(WCHAR));
+
+    free(_glfw.win32.keyName);
+    _glfw.win32.keyName = _glfwCreateUTF8FromWideString(name);
+    return _glfw.win32.keyName;
+}
+
 void _glfwPlatformGetCursorPos(_GLFWwindow* window, double* xpos, double* ypos)
 {
     POINT pos = { 0, 0 };
