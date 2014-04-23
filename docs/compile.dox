@@ -124,7 +124,7 @@ destination for binaries.  Choose *Configure*, change any options you wish to,
 
 The CMake files for GLFW provide a number of options, although not all are
 available on all supported platforms.  Some of these are de facto standards
-among CMake users and so have no `GLFW_` prefix.
+among projects using CMake and so have no `GLFW_` prefix.
 
 If you are using the GUI version of CMake, these are listed and can be changed
 from there.  If you are using the command-line version, use the `ccmake` tool.

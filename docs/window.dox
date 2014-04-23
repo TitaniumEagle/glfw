@@ -25,10 +25,15 @@ by 480 windowed mode window:
 
 @code
 GLFWwindow* window = glfwCreateWindow(640, 480, "My Title", NULL, NULL);
+if (!window)
+{
+    // Handle window creation failure
+}
 @endcode
 
-If window creation fails, `NULL` will be returned, so you need to check whether
-it did.
+If window creation fails, `NULL` will be returned, so you need to check the
+return value.  If creation failed, an error will have been reported to the error
+callback.
 
 This handle is then passed to all window related functions, and is provided to
 you along with input events, so you know which window received the input.
