@@ -33,3 +33,7 @@ project "glfw"
 	location( LDIR_THIRDPARTY_BUILD )
 
 	suffix_macro ( version, true )
+	
+if _OPTIONS["tp-samples"] then
+	include ( "examples/" ) --was broken and for premake4.. now its not even there :v
+end
