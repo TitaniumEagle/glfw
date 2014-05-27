@@ -29,6 +29,8 @@ project "glfw"
 		excludes { "src/cocoa_*", "src/egl_*", "src/nsgl_*", "src/wgl_*", "src/win32_*" }
 	configuration { }
 	
+	warnings "Off" --Disable warnings, third party libs flood the log
+	
 	targetdir( LDIR_THIRDPARTY_LIB )
 	location( LDIR_THIRDPARTY_BUILD )
 
