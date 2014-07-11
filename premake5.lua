@@ -21,11 +21,12 @@ project "glfw"
 	kind ("StaticLib")
 		
 	configuration "windows"
-		defines { "_GLFW_WIN32=1" }
+		defines { "_GLFW_WIN32=1", "_GLFW_WGL=1" }
 		excludes { "src/cocoa_*", "src/egl_*", "src/glx_*", "src/nsgl_*", "src/x11_*" }
 		
 	configuration "linux"
-		defines { "_GLFW_X11=1" }
+		defines { "_GLFW_X11=1", "_GLFW_GLX=1" }
+		defines { "_GLFW_HAS_GLXGETPROCADDRESSARB=1" } -- HACK HACK: but modern (targeted) computers should support this
 		excludes { "src/cocoa_*", "src/egl_*", "src/nsgl_*", "src/wgl_*", "src/win32_*" }
 	configuration { }
 	
